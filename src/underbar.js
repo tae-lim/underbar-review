@@ -101,6 +101,26 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
+    var results = [];
+    var alreadySeen = [];
+
+    if (isSorted) {
+      _.each(array, function (item) {
+        if (_.indexOf(alreadySeen, iterator(item)) === -1) {
+          alreadySeen.push(iterator(item));
+          results.push(item);
+        }
+      });
+    } else {
+      _.each(array, function (item) {
+        console.log(`array: ${array}  item ${item} result: ${results}`);
+        if (_.indexOf(results, item) === -1) {
+          results.push(item);
+        }
+      });
+    }
+    return results;
+
   };
 
 
