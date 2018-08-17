@@ -1,4 +1,7 @@
-(function() {
+{ 
+"cmd": ["node", "$file"], 
+"selector": "source.js" 
+} (function() {
   'use strict';
 
   var FILL_ME_IN = 'Fill this value in';
